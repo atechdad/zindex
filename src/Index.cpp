@@ -80,7 +80,7 @@ size_t makeWindow(uint8_t *out, size_t outSize, const uint8_t *in,
 }
 
 void uncompress(const std::vector<uint8_t> &compressed, uint8_t *to,
-                size_t len) {
+                uLongf len) {
     uLongf destLen = len;
     X(::uncompress(to, &len, &compressed[0], compressed.size()));
     if (destLen != len)
